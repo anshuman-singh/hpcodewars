@@ -15,15 +15,28 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function showWelcome()
+	/*public function showWelcome()
 	{
-		$results = User::all();
+		/*$results = User::all();
 		return $results;
-	}
 
+
+		return View::make('hello');
+	}
 	public function showWork()
 	{
 		return View::make('work');
+	}
+	*/
+
+	public function home(){
+
+		/*Mail::send('emails.auth.ForgetPassEmail' , array('name' => 'Anshuman'), function($message){
+			$message->to('anshuman11089@gmail.com', 'Anshuman Singh')->subject('Forget Password');
+
+		});*/
+		/*echo $user = User::find(1)->username;*/
+		return View::make('home');
 	}
 
 }
