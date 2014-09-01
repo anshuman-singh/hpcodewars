@@ -59,6 +59,7 @@ class AccountController extends BaseController {
 		 $validator = Validator::make(Input::all(),
 		 	array(
 		 		'email'=>'required|max:50|email|unique:users',
+		 		'email_sec'=>'required|max:50|email|unique:users',
 		 		'username'=>'required|max:20|min:3|unique:users',
 		 		'password'=>'required|min:6',
 		 		'password_again'=>'required|same:password'
@@ -73,6 +74,7 @@ class AccountController extends BaseController {
 		}
 		else{
 			$email	=Input::get('email');
+			$email_sec =Input::get('email_sec');
 			$username	=Input::get('username');
 			$password	=Input::get('password');
 
@@ -81,6 +83,7 @@ class AccountController extends BaseController {
 
 			$user = User::create(array(
 				'email'=> $email,
+				'email_sec' => $email_sec,
 				'username' => $username,
 				'password'=> Hash::make($password),
 				'code'=> $code,
@@ -94,7 +97,7 @@ class AccountController extends BaseController {
 				});
 				/*return Redirect::route('home');*/
 				return Redirect::route('home')
-					->with('global', 'Your account has been created ! We have sent you an email to activate your account.');
+					->with('global', 'Your account has been created ! We have sent you an email to your Primary Email-Id to activate your account.');
 			}
 
 
