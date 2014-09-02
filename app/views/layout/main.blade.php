@@ -13,28 +13,6 @@
 	<link href='http://fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<header  data-uk-sticky>
-		<nav class="uk-navbar">
-			<div class="uk-container uk-container-center">
-			    <ul class="uk-navbar-nav">
-			        <li><a href="{{ URL::route('home') }}" data-uk-smooth-scroll="{offset:90}" class="code-war">R&amp;D CodeWars 2014</a></li>
-		        	<!-- <li><a href="" >Answers</a></li> -->
-		        	<li><a href="#calendar" data-uk-smooth-scroll="{offset:50}">Calendar</a></li>
-		        	<li><a href="#rules" data-uk-smooth-scroll="{offset:50}">Rules</a></li>
-		        	<li><a href="#faq" data-uk-smooth-scroll>FAQ</a></li>
-
-			    </ul>
-			    <div class="uk-navbar-flip">
-				    <ul class="uk-navbar-nav">
-				        <!-- <li><a href="login.html">Login</a></li>
-				       <li><a href="signup.html">Signup</a></li> -->
-						@include('layout.navigation')
-				    </ul>
-			    </div>
-				
-			</div>
-		</nav>
-	</header>
 
 	
 			
