@@ -5,11 +5,46 @@
 
 @section('content')
 
-<section class="uk-grid">
-	<div class="uk-width-1-3 uk-push-1-3 login-content">
+
+<div class="container">
+	<div class="col-lg-6 col-lg-offset-3 form-blk">
 		<div class="login">
-			<form class="uk-form uk-form-stacked" action="{{ URL::route('account-sign-in-post') }}" method="post">
-				<h2>Login</h2>
+			<div class="blk-title">
+				Sign In
+			</div>
+			<div class="col-lg-10 col-lg-offset-1 blk-content" >
+				<form role="form" action="{{ URL::route('account-sign-in-post') }}" method="post">
+				  <div class="form-group">
+				    <label for="exampleInputEmail1">Email address</label>
+				    <input  placeholder="Email address" class="form-control input-lg" type="text" name ="email" {{ (Input::old('email')) ? ' value="' . e(Input::old('email')) . '"' : ''}}>
+						@if($errors->has('email'))
+							<div class="input-error">* {{$errors->first('email')}}</div>
+						@endif
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleInputPassword1">Password</label>
+				    <input  placeholder="Password" class="form-control input-lg" type="password" name ="password">
+						@if($errors->has('password'))
+							<div class="input-error">* {{$errors->first('password')}}</div>
+						@endif
+				  </div>
+				  
+				  <div class="checkbox">
+				    <label>
+				      <input type="checkbox" name="remember" id="remember"> Remember Me
+				    </label>
+				  </div>
+				  <input class="btn btn-primary pull-right" type="submit" value="Sign in">
+					{{Form::token()}}
+				</form>
+
+				<a class="blk-link" href="{{ URL::route('account-forgot-password') }}">Forgot password ?</a>
+				<div class="clearfix">&nbsp;</div>
+			</div>
+
+
+			<!-- <form class="" action="{{ URL::route('account-sign-in-post') }}" method="post">
+				
 				<fieldset data-uk-margin>
 					<label class="uk=form-label">Primary Email</label>
 					<input  placeholder="Type your email Address" class="uk-form-width-large" type="text" name ="email" {{ (Input::old('email')) ? ' value="' . e(Input::old('email')) . '"' : ''}}>
@@ -30,13 +65,12 @@
 						Remember Me
 					</label>
 				</fieldset>	
-				<input class="uk-button uk-button-primary" type="submit" value="Sign in">
+				<input class="btn btn-primary" type="submit" value="Sign in">
 				{{Form::token()}}
-			</form>
-			<li><a href="{{ URL::route('account-forgot-password') }}">Forgot password</a></li>
+			</form> -->
 		</div>
 	</div>
-</section>
+</div>
 
 
 @stop

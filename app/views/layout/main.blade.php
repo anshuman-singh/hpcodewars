@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="{{ URL::asset('lib/uikit/css/uikit.min.css')}}">
 	<link rel="stylesheet" href="{{ URL::asset('css/styles.css')}}">
 	<script src="lib/jquery.js"></script>
-	// <script src="lib/uikit/js/uikit.min.js"></script>
+	<script src="lib/uikit/js/uikit.min.js"></script>
 	<script src="lib/uikit/js/addons/sticky.min.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
 </head>
