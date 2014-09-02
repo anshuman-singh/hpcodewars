@@ -13,7 +13,7 @@
 					<img src="images/marvin-body.png" alt="">
 					<img src="images/marvin-rh.png" class="marvin-right" alt="">
 				</div>
-				<!-- <div class="marvin-msg">Welcome code warriers! <br> I am Marvin</div> -->
+				<div class="marvin-msg pull-right">Welcome all code warriors! <br> R&D Code Wars is a programming competition for India R&D organization which includes Business Solutions, ESSN, PPS (IPG), HPSW, and HP IM, HP Labs. </div>
 			</div>
 		</div>
 	</div>
@@ -21,29 +21,35 @@
 
 <div class="event-blk" id="calendar">
 	<section class="container">
-		<h2 class="uk-h1 uk-text-center">Event Calendar</h2>
+		<h2 class="text-center">Event Calendar</h2>
 
-		<div class="well uk-panel-box uk-panel-box-secondary">
-            <h3 class="uk-panel-title">Registration</h3>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+		<div class="panel panel-info">
+            <div class="panel-heading">Registration</div>
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
         </div>
 
-        <div class="well uk-panel-box uk-panel-box-secondary">
-            <h3 class="uk-panel-title">Prelims</h3>
-           Online Submissions – 27th April 10:00 am to 28th April 10:00 am </code>
+        <div class="panel panel-info">
+            <div class="panel-heading">Prelims</div>
+           	<div class="panel-body">
+           		Online Submissions – 27th April 10:00 am to 28th April 10:00 am </code>
+           	</div>
         </div>
 
-        <div class="well uk-panel-box uk-panel-box-secondary">
-            <h3 class="uk-panel-title">Finals</h3>
-            Venue – STSD Enclosed Cafeteria <br>Date – 4th May, 10:00 am to 5:00 pm </code>
+        <div class="panel panel-info">
+            <div class="panel-heading">Finals</div>
+            <div class="panel-body">
+            	Venue – STSD Enclosed Cafeteria <br>Date – 4th May, 10:00 am to 5:00 pm </code>
+            </div>
         </div>
 	</section>
 </div>
-<div class="rules-blk" id="rules">
-	<section class="container">
-		<h2 class="uk-h1 uk-text-center">Rules of Engagement</h2>
-		<div class="well uk-panel-box uk-panel-box-primary">
-            <h2 class="uk-panel-title">Contest Guidelines</h2>
+
+
+<div class="rules-blk container" id="rules">
+	<h2 class="text-center">Rules of Engagement</h2>
+	<div class="panel panel-info">
+        <div class="panel-heading">Contest Guidelines</div>
+		<div class="panel-body">
             <ol class="c-guide">
             	<li>The contest is open to all HP employees who are a part of ESSN, HPSW, PPS(IPG), BSO, HP Labs, HP IM R&amp;D organizations in Bangalore</li>
             	<li>The portal will be open from 27th April 10:00 am to 28th April 10:00 am.</li>
@@ -55,9 +61,11 @@
             	<li>All decisions regarding the evaluation of the submissions will be final.</li>
             </ol>
         </div>
+	</div>
 
-        <div class="well uk-panel-box uk-panel-box-primary">
-            <h2 class="uk-panel-title">Submission Guidelines</h2>
+	<div class="panel panel-info">
+        <div class="panel-heading">Submission Guidelines</div>
+		<div class="panel-body">
             <ol class="s-guide">
             	<li>The solution has to be submitted in the form of either tar/zip/tar.gz file that is to be uploaded via the portal. The size limit of the archive is 1 MB.</li>
             	<li>File name should be  either <strong>Solution1.zip</strong> or <strong>Solution1.tar</strong> or <strong>Solution1.tar.gz</strong>. </li>
@@ -66,9 +74,11 @@
             	<li>Please do not upload any binaries as a part of the submission.</li>
             </ol>
         </div>
+	</div>
 
-        <div class="well uk-panel-box uk-panel-box-primary">
-            <h2 class="uk-panel-title">Evaluation Criteria</h2>
+	<div class="panel panel-info">
+        <div class="panel-heading">Evaluation Criteria</div>
+		<div class="panel-body">
             <ol class="e-guide">
             	<li>Functional Correctness: Solutions will be ranked by the most number of correct output for the input test cases.</li>
             	<li>Teams who have solved both problems will be ranked higher.</li>
@@ -77,15 +87,15 @@
             </ol>
             <div class="e-guide">
             	The given problem has to be solved by writing code in either of the following languages : C, C++, Java<br><br>
-				<h2 class="uk-panel-title">For C/C++ programs,</h2>
+				<h3 class="">For C/C++ programs,</h3>
 				<ol>
 					<li>For C program, the file extension should be .c</li>
 					<li>For C++ program, the file extension should be .cxx only</li>
 					<li>You can use any compiler to test your program, but it should be compilable in  gcc/g++ version 4.x and above. <br>
 					Compilation command used would be <br>
-					<strong>For C program,</strong><br>
+					For C program,<br>
 					<code>gcc -g -o outputname file to be compiled</code><br>
-					<strong>For C program,</strong><br>
+					For C program,<br>
 					<code>gcc -g -o outputname file to be compiled</code><br>
 					</li>
 					<li>You can use standard C/C++ run time libraries only and you can't use any third party libraries.</li>
@@ -93,27 +103,28 @@
 					<strong>Note: </strong>For MSVC users, don't include windows.h, Win 32 API's and MFC classes.</li>
 				</ol>
 				<ol class="guide-program">
-					<h3 class="uk-panel-title"><strong>For Java programs, version 1.6 will be used</strong></h3>
+					<h4 class="">For Java programs, version 1.6 will be used</h4>
 					<li>Compilation: <code>javac -g file to be compiled.java</code></li>
 					<li>In Java, you may use the standard packages java.lang, java.io, java.text, java.math, and java.util and their subpackages. You should not use utilities such as yacc, bison, lex, or flex to produce programs. </li>
 				</ol>
 				<ol class="guide-program">
-					<h3 class="uk-panel-title"><strong>For all programs</strong></h3>
+					<h4 class="">For all programs</h4>
 					<li>Your programs may not use  OS/Platform Specific functions for portability.</li>
 					<li>Since, single file is allowed, arrange your code to be more readable. </li>
 				</ol>
 				<ol class="guide-program">
-					<h3 class="uk-panel-title"><strong>Execution</strong></h3>
+					<h4 class="">Execution</h4>
 					<li>Your program should be able to read the inputs from stdin and redirect the output to stdout.  For each question, input and output formats are provided in the questions.</li>
 				</ol>
-            </div>
         </div>
-	</section>
+	</div>
 </div>
+</div>
+
+
 <div class="faq-blk" id="faq">
 	<section class="container">
-		<h2 class="uk-h1 uk-text-center">Frequently Asked Questions</h2>
-
+		<h2 class="text-center">Frequently Asked Questions</h2>
 		<div class="row">
             <div class="col-lg-6">
 				<div class="each-faq">
@@ -180,7 +191,6 @@
 						File name should be <strong>Solution1.zip</strong> or <strong>Solution1.tar</strong> or <strong>Solution1.tar.gz</strong> <br> <br>
 						If the team wants to submit more than one question, they need to be submitted separately in the link given. Don’t submit answers for both questions in single file.  <br><br>
 						Typical content of the submission artifact should be a single source code file and a README (optional).README may contain the brief explanation of the program logic, design and limitations.
-
 					</p>
 				</div>
             </div>
