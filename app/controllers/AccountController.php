@@ -33,7 +33,8 @@ class AccountController extends BaseController {
 			) , $remember);
 
 			if($auth){
-				return Redirect::intended('/');
+				/*return Redirect::intended('/');*/
+				return Redirect::route('profile-user');
 			}
 			else{
 				return Redirect::route('account-sign-in')

@@ -473,3 +473,7 @@ footer {
 body p {
   color: greenyellow;
 }
+.navbar-brand{
+font-size: 26px;
+font-weight: 500;
+}

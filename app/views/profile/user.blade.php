@@ -1,7 +1,9 @@
-@extends('layout.main')
+@extends('layout.default')
+
+@include('layout.navbar')
 
 
-@section('formContent')
+@section('content')
 	
 <p>{{ $user->username }} ({{ $user->email}})</p>
 	

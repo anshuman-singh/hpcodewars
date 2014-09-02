@@ -15,10 +15,6 @@ Route::get('/', array(
 	'uses' => 'HomeController@home'
 ));
 
-Route::get('/user/{username}', array(
-	'as' => 'profile-user',
-	'uses' => 'ProfileController@user'
-));
 
 
 //auth group
@@ -36,6 +32,11 @@ Route::group(array('before' => 'auth'), function(){
 
 
 
+
+	Route::get('/user/{username}', array(
+		'as' => 'profile-user',
+		'uses' => 'ProfileController@user'
+	));
 
 	//change pwd GET
 	Route::get('/account/change-password', array(

@@ -10,13 +10,20 @@
 			<a class="navbar-brand" href="{{ URL::route('home') }}">Codewars 2014</a>
 		</div>
 		<div class="collapse navbar-collapse">
+
+			
 			<ul class="nav navbar-nav">
+				@if(Auth::check())
+					<li><a href="{{ URL::route('account-change-password') }}">Submissions</a></li>
+				@else
 				<li class="active"><a href="{{ URL::route('home') }}">Home</a></li>
 				
 				<li><a  data-scroll href="#calendar">Calendar</a></li>
 	        	<li><a  data-scroll href="#rules">Rules</a></li>
 	        	<li><a  data-scroll href="#faq">FAQ</a></li>
+	        	@endif
 			</ul>
+			
 
 			<ul class="nav navbar-nav navbar-right">
 
