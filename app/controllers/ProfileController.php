@@ -16,4 +16,12 @@ class ProfileController extends BaseController {
 
 	}
 
+	public function submit() {
+
+		return View::make('profile.submit');
+
+	
+
+	}
+
 }	

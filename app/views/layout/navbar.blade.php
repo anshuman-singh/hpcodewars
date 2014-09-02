@@ -14,7 +14,7 @@
 			
 			<ul class="nav navbar-nav">
 				@if(Auth::check())
-					<li><a href="{{ URL::route('account-change-password') }}">Submissions</a></li>
+					<li><a href="{{ URL::route('profile-submission') }}">Submissions</a></li>
 				@else
 				<li class="active"><a href="{{ URL::route('home') }}">Home</a></li>
 				
@@ -29,7 +29,7 @@
 
 			@if(Auth::check())
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i>&nbsp; {{ Auth::user()->fullname}} <b class="caret"></b></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i>&nbsp; {{ Auth::user()->username}} <b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						
 						<li><a href="{{ URL::route('account-change-password') }}">Change Password</a></li>

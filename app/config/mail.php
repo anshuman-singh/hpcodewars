@@ -41,7 +41,7 @@ return array(
 	|
 	*/
 
-	'port' => 465,
+	'port' => 587,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'aaokhaokhisko@gmail.com', 'name' => 'aaokhaokhisko'),
+	'from' => array('address' => 'hpcodewars2014@gmail.com', 'name' => 'Admin'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => 'aaokhaokhisko@gmail.com',
+	'username' => 'hpcodewars2014@gmail.com',
 
 	/*
 	|--------------------------------------------------------------------------

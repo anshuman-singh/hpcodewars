@@ -38,6 +38,11 @@ Route::group(array('before' => 'auth'), function(){
 		'uses' => 'ProfileController@user'
 	));
 
+	Route::get('/submit', array(
+		'as' => 'profile-submission',
+		'uses' => 'ProfileController@submit'
+	));
+
 	//change pwd GET
 	Route::get('/account/change-password', array(
 		'as' => 'account-change-password',

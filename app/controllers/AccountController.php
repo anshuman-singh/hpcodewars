@@ -34,7 +34,7 @@ class AccountController extends BaseController {
 
 			if($auth){
 				/*return Redirect::intended('/');*/
-				return Redirect::route('profile-user');
+				return Redirect::route('profile-user', array('username' => Auth::user()->username));
 			}
 			else{
 				return Redirect::route('account-sign-in')
@@ -122,7 +122,7 @@ class AccountController extends BaseController {
 				}
 
 				return Redirect::route('home')
-					->with('global', 'We couldnot activate your account! Try again later.');
+					->with('global', 'We could not activate your account! Try again later.');
 		}
 
 
