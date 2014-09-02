@@ -14,9 +14,8 @@
   font-weight: bold;
 }
 body {
-  font-family: opensans-r, Tahoma, Helvetica, sans-serif !important;
-  /*font-family: 'Carrois Gothic', sans-serif;*/
-
+  /*font-family: opensans-r, Tahoma, Helvetica, sans-serif !important;*/
+  font-family: 'Carrois Gothic', sans-serif;
   color: #fff;
   font-weight: 100;
   font-size: 16px;
@@ -64,42 +63,14 @@ footer {
   padding-top: 20px;
   color: #fff;
 }
-
-/* .login-content{
-	margin-top: 50px;
-	.login{
-		background: #fff;
-		min-height: 300px;
-		border: 1px solid #ccc;
-		padding: 50px;
-	}
-} */
+.login-content {
+  margin-top: 50px;
+}
 .login-content .login {
-  padding-top: 20px;
+  background: #fff;
+  min-height: 300px;
+  border: 1px solid #ccc;
   padding: 50px;
-  background-color: #ccc;
-}
-.login-content .login filedset {
-  color: red;
-}
-.login-content .login filedset label {
-  color: #333 !Important;
-  margin-top: 20px;
-}
-.login-content .login filedset input {
-  padding: 20px;
-  padding-left: 5px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-.login-content .login .uk-button {
-  border-radius: 5px;
-  padding: 5px;
-  width: 120px;
-  margin-top: 20px;
-  position: absolute;
-  right: 57px;
-  bottom: 0px;
 }
 .uk-button {
   margin-bottom: 10px;
@@ -335,25 +306,8 @@ h2 {
   font-size: 14px;
   color: #444444;
 }
-<<<<<<< HEAD
-@-webkit-keyframes fadeInBack {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(0);
-  }
-  50% {
-    opacity: 0.4;
-    -webkit-transform: scale(2);
-  }
-  100% {
-    opacity: 0.2;
-    -webkit-transform: scale(5);
-  }
-}
 .marvin-msg {
   float: right;
-  animation: fadeInBack 3s ease-in;
-
 }
 .marvin-img {
   float: left;
@@ -424,52 +378,4 @@ code {
 }
 .clearfix {
   clear: both;
-}
-
-.uk-grid .login-content .login {
-  padding-top: 20px;
-  background-color: #ccc;
-}
-.uk-grid .login-content .login .uk-button {
-  border-radius: 5px;
-  padding: 5px;
-  width: 120px;
-  margin-top: 20px;
-  position: absolute;
-  right: 57px;
-  bottom: 0px;
-}
-.form-items {
-  color: red;
-}
-.form-items label {
-  color: #333 !important;
-  margin-top: 20px !important;
-}
-.form-items input {
-  padding: 20px !important;
-  padding-left: 5px !important;
-  border-radius: 5px;
-  margin-bottom: 10px !important;
-}
-/* .content-block{
-	background-image: url("/images/content-bg.png");
-	background-repeat: no-repeat;
-	background-position: 19px 99px;
-	background-color: #f7f7f7;
-	min-height:200px;
-} */
-.uk-grid {
-  margin-top: -20px;
-}
-footer {
-  position: relative;
-}
-.global-messages {
-  background-color: #ddd;
-  color: green;
-  float: right;
-}
-body p {
-  color: greenyellow;
 }

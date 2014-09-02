@@ -2,6 +2,7 @@
 
 @include('layout.navbar')
 
+
 @section('content')
 	<form action="{{ URL::route('account-change-password-post') }}" method="post">
 		<div>
@@ -23,7 +24,8 @@
 			@endif
 		</div>
 
-		<input type="submit" value="CHnage Password">
-		{{Form::token()}}
-	</form>
+
+				<input type="submit" class="uk-button uk-button-primary" value="Change Password">
+				{{Form::token()}}
+			</form>
 @stop
