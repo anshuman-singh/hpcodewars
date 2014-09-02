@@ -36,7 +36,7 @@ class HomeController extends BaseController {
 
 		});*/
 		/*echo $user = User::find(1)->username;*/
-		return View::make('home');
+		return View::make('pages.home');
 	}
 
 }

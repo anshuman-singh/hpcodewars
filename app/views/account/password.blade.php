@@ -1,8 +1,8 @@
-@extends('layout.main')
+@extends('layout.default')
 
+@include('layout.navbar')
 
-
-@section('formContent')
+@section('content')
 	<form action="{{ URL::route('account-change-password-post') }}" method="post">
 		<div>
 			Old password: <input type="password" name="old_password">

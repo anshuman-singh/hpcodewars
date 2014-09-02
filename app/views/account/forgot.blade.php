@@ -1,7 +1,8 @@
-@extends('layout.main')
+@extends('layout.default')
 
+@include('layout.navbar')
 
-@section('formContent')
+@section('content')
 	
 	<form action="{{ URL::route('account-forgot-password-post')}}" method="post">
 		<div>
