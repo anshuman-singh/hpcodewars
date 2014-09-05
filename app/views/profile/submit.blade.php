@@ -22,8 +22,9 @@
 		<div class="col-lg-10 col-lg-offset-1 blk-content">
 		{{ Form::open(array('action' => 'ProfileController@upload' ,'files'=>true) ) }}
 			{{ Form::token() }}
+
 			<div class="input-lg">{{ Form::file('file') }}</div>
-			<div class="btn btn-primary pull-right">{{ Form::submit('Upload') }}</div>
+			<div class="btn btn-primary pull-right" name="uploadbtn" value="Upload">{{ Form::submit('Upload') }}</div>
 		{{ Form::close() }}
 		</div>
 	</div>

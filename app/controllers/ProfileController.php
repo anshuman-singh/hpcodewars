@@ -41,14 +41,25 @@ class ProfileController extends BaseController {
 				// If the uploads fail due to file system, you can try doing public_path().'/uploads' 
 				//$filename = str_random(12);
 				$filename = $file->getClientOriginalName();
-				//$extension =$file->getClientOriginalExtension(); 
-				$upload_success = Input::file('file')->move($destinationPath, $filename);
-				//$upload_success = Input::upload('file',$destinationPath, $filename);
-				if( $upload_success ) {
-				   return Response::json('success', 200);
-				} else {
-				   return Response::json('error', 400);
+				$extension =$file->getClientOriginalExtension(); 
+				if($extension == 'zip'){
+					$upload_success = Input::file('file')->move($destinationPath, $filename);
+					//$upload_success = Input::upload('file',$destinationPath, $filename);
+					if( $upload_success ) {
+						return Redirect::route('profile-submission')
+							->with('global',  Helper::format_message('Your solution is uploaded successfully!','success'));
+
+							
+					  /* return Response::json('success', 200);*/
+					} else {
+					   return Response::json('error', 400);
+					}
 				}
+				else{
+					return Redirect::route('profile-submission')
+						->with('global',  Helper::format_message('Please upload only .zip files!','danger'));
+				}
+				
 		}
 	}
 
