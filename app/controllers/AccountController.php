@@ -24,7 +24,6 @@ class AccountController extends BaseController {
 		else{
 
 			$remember = (Input::has('remember')) ? true : false;
-
 			$auth = Auth::attempt(array(
 				'email'	=> Input::get('email'),
 				'password'	=> Input::get('password'),
@@ -38,18 +37,18 @@ class AccountController extends BaseController {
 			}
 			else{
 				return Redirect::route('account-sign-in')
-					->with('global', 'Email and Password wrong!');
+					->with('global', Helper::format_message('Email and Password do not match! or You have\'nt activated your account!','danger'));
 			}
 		}
 		return Redirect::route('account-sign-in')
-			->with('global', 'There was a problem signing in. Have you activated your account!');
+			->with('global',  Helper::format_message('There was a problem signing in. Have you activated your account!','danger'));
 
 	}
 
 
 	public function getSignOut(){
 		Auth::logout();
-		return Redirect::route('home');
+		return Redirect::route('account-sign-in');
 	}
 
 	public function getCreate(){
@@ -59,13 +58,19 @@ class AccountController extends BaseController {
 	public function postCreate(){
 		 $validator = Validator::make(Input::all(),
 		 	array(
-		 		'email'=>'required|max:50|email|unique:users',
-		 		'email_sec'=>'required|max:50|email|unique:users',
+		 		'email'=>'required|max:50|email|unique:users|regex:(^[a-z0-9](\.?\-?\_?[a-z0-9]){1,}@hp\.com$)',
+		 		'email_sec'=>'required|max:50|email|unique:users|different:email|regex:(^[a-z0-9](\.?\-?\_?[a-z0-9]){1,}@hp\.com$)',
 		 		'username'=>'required|max:20|min:3',
 		 		'password'=>'required|min:6',
 		 		'password_again'=>'required|same:password'
 
 		 	)
+
+		 	/*$validator1 = Validator::extend('Input::get('email')',$validator.'@hp.com');
+		 	if($validator1->fails()){
+		 		return Riderct::route('account-sign-in')
+		 			->with('global','use hp email only'); 	
+		 	}*/
 		);
 
 		if($validator->fails()){
@@ -96,9 +101,12 @@ class AccountController extends BaseController {
 				Mail::send('emails.auth.activate' ,array('link' => URL::route('account-activate' , $code), 'username' =>$username), function($message) use ($user) {
 					$message->to($user->email, $user->username)->subject('Activate your account');
 				});
+				Mail::send('emails.auth.activate' ,array('link' => URL::route('account-activate' , $code), 'username' =>$username), function($message) use ($user) {
+					$message->to($user->email_sec, $user->username)->subject('Activate your account');
+				});
 				/*return Redirect::route('home');*/
-				return Redirect::route('home')
-					->with('global', 'Your account has been created ! We have sent you an email to your Primary Email-Id to activate your account.');
+				return Redirect::route('account-sign-in')
+					->with('global',  Helper::format_message('Your account has been created! We have sent you an email to your Primary Email-Id to activate your account.' ,'success'));
 			}
 
 
@@ -116,13 +124,13 @@ class AccountController extends BaseController {
 					$user->code ='';
 
 					if($user->save()){
-						return Redirect::route('home')
-								->with('global', 'Activated! You can now sign-in');	
+						return Redirect::route('account-sign-in')
+								->with('global',  Helper::format_message('You have successfully activated your account! Please sign-in','success'));	
 					}
 				}
 
-				return Redirect::route('home')
-					->with('global', 'We could not activate your account! Try again later.');
+				return Redirect::route('account-sign-in')
+					->with('global',  Helper::format_message('We could not activate your account! Try again later.','danger'));
 		}
 
 
@@ -156,18 +164,18 @@ class AccountController extends BaseController {
 					$user->password = Hash::make($password);
 
 					if($user->save()){
-						return Redirect::route('home')
-							->with('global', 'Your Password has been changed.');
+						return Redirect::route('account-sign-in')
+							->with('global',  Helper::format_message('Your Password has been changed.','success'));
 					}
 				}else{
 					return Redirect::route('account-change-password')
-						->with('global', 'Your old password is incorrect.');
+						->with('global',  Helper::format_message('Your old password is incorrect.', 'danger'));
 				}
 
 			}
 
 			return Redirect::route('account-change-password')
-					->with('global', 'You couldnot change your password! Try again later.');
+					->with('global',  Helper::format_message('You could not change your password! Try again later.','danger'));
 		}
 
 		public function getForgotPassword(){
@@ -202,10 +210,13 @@ class AccountController extends BaseController {
 					if($user->save()){
 						Mail::send('emails.auth.recover' ,array('link' =>URL::route('account-recover' , $code) , 'username' =>$user->username , 'password' => $password), function($message) use ($user) {
 							$message->to($user->email, $user->username)->subject('Your new password');
+						});
+						Mail::send('emails.auth.recover' ,array('link' =>URL::route('account-recover' , $code) , 'username' =>$user->username , 'password' => $password), function($message) use ($user) {
+							$message->to($user->email_sec, $user->username)->subject('Your new password');
 						});	
 
-						return Redirect::route('home')
-							->with('global', 'We have sent you a new password.');
+						return Redirect::route('account-sign-in')
+							->with('global',  Helper::format_message('We have sent you a new password. Please check your mail!','success'));
 					}
 
 
@@ -214,7 +225,7 @@ class AccountController extends BaseController {
 			}
 
 			return Redirect::route('account-forgot-password')
-					->with('global', 'Couldnot request new password.');
+					->with('global',  Helper::format_message('Couldnot request a new password.','danger'));
 		}
 
 
@@ -230,14 +241,14 @@ class AccountController extends BaseController {
 				$user->code = '';
 
 				if($user->save()){
-					return Redirect::route('home')
-						->with('global', 'your account has been recovered and you can signin with new password.');
+					return Redirect::route('account-sign-in')
+						->with('global',  Helper::format_message('Your account has been recovered! You can signin with new password.','success'));
 
 				}
 
 			}
-			return Redirect::route('home')
-				->with('global', 'Could not recover you account.');
+			return Redirect::route('account-sign-in')
+				->with('global',  Helper::format_message('Sorry, we could not recover you account.','danger'));
 
 		}
 

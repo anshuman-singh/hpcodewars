@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title></title>
-	<meta charset="UTF-8">
 	<title>Code Wars</title>
 	<link rel="stylesheet" href="{{ URL::asset('lib/uikit/css/uikit.min.css')}}">
 	<link rel="stylesheet" href="{{ URL::asset('css/styles.css')}}">
@@ -13,28 +11,6 @@
 	<link href='http://fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<header  data-uk-sticky>
-		<nav class="uk-navbar">
-			<div class="uk-container uk-container-center">
-			    <ul class="uk-navbar-nav">
-			        <li><a href="{{ URL::route('home') }}" data-uk-smooth-scroll="{offset:90}" class="code-war">R&amp;D CodeWars 2014</a></li>
-		        	<!-- <li><a href="" >Answers</a></li> -->
-		        	<li><a href="#calendar" data-uk-smooth-scroll="{offset:50}">Calendar</a></li>
-		        	<li><a href="#rules" data-uk-smooth-scroll="{offset:50}">Rules</a></li>
-		        	<li><a href="#faq" data-uk-smooth-scroll>FAQ</a></li>
-
-			    </ul>
-			    <div class="uk-navbar-flip">
-				    <ul class="uk-navbar-nav">
-				        <!-- <li><a href="login.html">Login</a></li>
-				       <li><a href="signup.html">Signup</a></li> -->
-						@include('layout.navigation')
-				    </ul>
-			    </div>
-				
-			</div>
-		</nav>
-	</header>
 
 	
 			
@@ -57,7 +33,7 @@
 		<div class="twinkling">
 			<div class="uk-container uk-container-center marvin-blk" id="main">
 				<div class="main-content">
-					<div class="marvin-img">
+					<div class="marvin-img hidden-xs hidden-sm">
 						<img src="/images/marvin-lh.png" class="marvin-left" alt="">
 						<img src="/images/marvin-body.png" alt="">
 						<img src="/images/marvin-rh.png" class="marvin-right" alt="">

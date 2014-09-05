@@ -40,7 +40,7 @@ $env = $app->detectEnvironment(array(
 | may do so within the paths.php file and they will be bound here.
 |
 */
-
+include('tools.php');
 $app->bindInstallPaths(require __DIR__.'/paths.php');
 
 /*

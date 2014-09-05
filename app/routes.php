@@ -38,9 +38,14 @@ Route::group(array('before' => 'auth'), function(){
 		'uses' => 'ProfileController@user'
 	));
 
-	Route::get('/submit', array(
+	Route::get('/user/{username}/submit', array(
 		'as' => 'profile-submission',
 		'uses' => 'ProfileController@submit'
+	));
+
+	Route::post('/user/{username}/submit',array(
+		'as' => 'profile-user-post',
+		'uses' => 'ProfileController@upload'
 	));
 
 	//change pwd GET

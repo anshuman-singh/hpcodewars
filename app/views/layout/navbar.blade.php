@@ -7,7 +7,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="{{ URL::route('home') }}">Codewars 2014</a>
+			<strong><a class="header-link navbar-brand" href="{{ URL::route('home') }}">R&amp;D Codewars 2014</a></strong>
 		</div>
 		<div class="collapse navbar-collapse">
 
@@ -30,6 +30,7 @@
 			@if(Auth::check())
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i>&nbsp; {{ Auth::user()->username}} <b class="caret"></b></a>
+
 					<ul class="dropdown-menu">
 						
 						<li><a href="{{ URL::route('account-change-password') }}">Change Password</a></li>
@@ -37,10 +38,10 @@
 						<li><a href="{{ URL::route('account-sign-out') }}">Sign Out</a></li>						
 					</ul>
 				</li>
-				<!-- <li><a href="{{ URL::route('account-sign-out') }}">Sign Out</a></li> -->
+				<!-- <li><a class="header-link" href="{{ URL::route('account-sign-out') }}">Sign Out</a></li> -->
 			@else
-				<li><a href="{{ URL::route('account-sign-in') }}">Sign In</a></li>
-				<li><a href="{{ URL::route('account-create') }}">Sign Up</a></li>
+				<li><a class="header-link" href="{{ URL::route('account-sign-in') }}">Sign In</a></li>
+				<li><a class="header-link" href="{{ URL::route('account-create') }}">Sign Up</a></li>
 
 			@endif
 				

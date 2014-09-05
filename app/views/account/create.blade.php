@@ -60,15 +60,17 @@
 	</div> 
 </section>-->
 
-
 <div class="container">
-	<div class="col-lg-6 col-lg-offset-3 form-blk">
+	<div class=" alert alert-info">
+		<b><i>NOTE:</i></b> Use HP email id only! People registering with non-HP email id will be <b>disqualified</b> automatically!
+	</div>
+	<div class="col-lg-6 col-lg-offset-3 form-blk " >
 		<div class="login">
 			<div class="blk-title">
 				Sign Up
 			</div>
 			<div class="col-lg-10 col-lg-offset-1 blk-content" >
-				<form role="form" action="{{ URL::route('account-create-post') }}" method="post">
+				<form role="form" action="{{ URL::route('account-create-post') }}" method="post" id="signup-form">
 				  <div class="form-group">
 				    <label for="exampleInputEmail1">Primary Email (1st Participant)</label>
 				    <input class="form-control input-lg" placeholder="Enter Primary Email" type="text" name ="email" {{ (Input::old('email')) ? ' value="' . e(Input::old('email')) . '"' : ''}}>
@@ -95,7 +97,7 @@
 
 				  <div class="form-group">
 				    <label for="exampleInputPassword1">Password</label>
-				    <input class="form-control input-lg" placeholder="Password " type="password" name ="password">
+				    <input class="form-control input-lg" placeholder="Password " type="password" name ="password" >
 					@if($errors->has('password'))
 						<div class="input-error">* {{$errors->first('password')}}</div>
 					@endif
@@ -110,7 +112,7 @@
 				  </div>
 				  
 				  
-				  <input class="btn btn-primary pull-right" type="submit" value="Sign Up">
+				  <input class="btn btn-primary pull-right" type="submit" value="Sign Up" id="signup-btn" >
 					{{Form::token()}}
 				</form>
 				<div class="clearfix">&nbsp;</div>

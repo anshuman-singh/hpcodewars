@@ -7,6 +7,9 @@
 
 
 <div class="container">
+	<div class=" alert alert-info">
+		<b><i>NOTE:</i></b> Use your team Primary email id to login!
+	</div>
 	<div class="col-lg-6 col-lg-offset-3 form-blk">
 		<div class="login">
 			<div class="blk-title">

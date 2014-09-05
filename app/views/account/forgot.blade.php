@@ -38,7 +38,7 @@
 					@if($errors->has('email'))
 						<div class="input-error">* {{$errors->first('email')}}</div>
 					@endif
-				  </div>
+				  </div>				  
 				  <input class="btn btn-primary pull-right" type="submit" value="Recover">
 					{{Form::token()}}
 					<div class="clearfix">&nbsp;</div>

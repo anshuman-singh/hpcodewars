@@ -8,4 +8,17 @@ $(document).ready(function(){
 	    callbackBefore: function ( toggle, anchor ) {}, // Function to run before scrolling
 	    callbackAfter: function ( toggle, anchor ) {} // Function to run after scrolling
 	});
+
+
+			//Disable registration begins
+
+					/*var form = document.getElementById("signup-form");
+		               var elements = form.elements;
+		               for (var i = 0, len = elements.length; i < len; ++i) {
+							elements[i].readOnly = true;
+					    }
+					var btn=document.getElementById("signup-btn");
+					btn.disabled =true;*/
+
+			//Disbale registration ends	
 });

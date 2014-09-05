@@ -7,7 +7,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<link rel="shortcut icon" href="../../assets/ico/favicon.ico">
-		<title>Sticky Footer Navbar Template for Bootstrap</title>
+		<title>R&amp;D CodeWars 2014</title>
 		<!-- Bootstrap core CSS -->
 		{{ HTML::style('css/bootstrap.css') }}
 
@@ -15,6 +15,9 @@
 
 
         {{ HTML::style('css/styles.css') }}
+
+        
+
 	</head>
 	<body>
 		
@@ -23,16 +26,20 @@
 		
 			@if(Session::has('global'))
 				<div class="container">
-					<div class="alert alert-success">{{ Session::get('global') }}</div>
+					{{ Session::get('global') }}
 				</div>
 			@endif
 
 			@yield('content')
-		<div id="footer">
+		<footer id="footer">
 			<div class="container">
-				<p class="text-muted">Place sticky footer content here.</p>
+				<p class="pull-left">&copy; R&amp;D CodeWars 2014 &nbsp; &nbsp;<a href="mailto:codewarcommandos@hp.com">Help</a> </p>
+
+				<div class="pull-right">
+					Developed By- <strong><a href="mailto:saini@hpcom">Aakanksha Saini</a></strong> &amp;<strong> <a href="mailto:anshuman.singh2@hp.com">Anshuman Singh</a></strong>
+				</div>
 			</div>
-		</div>
+		</footer>
 			<!-- Bootstrap core JavaScript
 			================================================== -->
 			<!-- Placed at the end of the document so the pages load faster -->
